@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <title>(포폴)반응형페이지</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header id="main_header">
+      <a href="#"><img src="./img/logo.png" alt="logo" /></a>
+      <button type="button" class="toggle_btn">
+        <span class="bar1"></span>
+        <span class="bar2"></span>
+        <span class="bar3"></span>
+        <span class="sr_only">전체메뉴보기</span>
+      </button>
+      <nav class="gnb">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li>
+            <a href="#">Rooms</a>
+            <div class="sub">
+              <ul>
+                <li><a href="#">101</a></li>
+                <li><a href="#">102</a></li>
+                <li><a href="#">103</a></li>
+                <li><a href="#">104</a></li>
+                <li><a href="#">105</a></li>
+                <li><a href="#">106</a></li>
+                <li><a href="#">107</a></li>
+                <li><a href="#">201</a></li>
+                <li><a href="#">202</a></li>
+                <li><a href="#">203</a></li>
+                <li><a href="#">204</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="#">Special</a></li>
+          <li><a href="#">Travel</a></li>
+          <li><a href="#">Location</a></li>
+          <li><a href="#">Reservation</a></li>
+        </ul>
+        <button class="closeBtn">Close<span>&times;</span></button>
+      </nav>
+      <div class="popup">
+        <ul>
+          <li><a href="#">Book Now</a></li>
+        </ul>
+      </div>
+    </header>
+    <hr />
+    <section id="slide_container">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./img/slide2.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/slide5.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/slide9.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/slide6.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/view.jpg" alt="" />
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+    <hr />
+    <section id="main_room">
+      <div class="m_wrap">
+        <div class="m_inner">
+          <div class="room_text">
+            <div class="room_t1">
+              <h2 class="title">ROOM VIEW</h2>
+              <img src="./img/room_main.jpg" alt="" />
+              <p class="desc">
+                드넓은 바다와 경계를 허무는 프라이빗 풀,<br />
+                당신을 위한 완벽한 휴식과 럭셔리한 공간까지.<br />
+                일상의 품격을 한 단계 높이는 곳,<br />
+                코랄트리에서 바다의 여유와 진정한 프리미엄을 경험하세요.
+              </p>
+            </div>
+          </div>
+          <div class="m_room">
+            <div class="swiper room">
+              <div class="swiper_wrapper">
+                <div class="swiper_slide item1">
+                  <a href="room1">
+                    <div class="room_A">
+                      <img src="./img/room3.jpg" alt="101호" />
+                    </div>
+                    <div class="room_info">
+                      <div class="title"><span>101</span>room A</div>
+                      <div class="more">more view</div>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper_slide item2">
+                  <a href="room2">
+                    <div class="room_B">
+                      <img src="./img/room8.jpg" alt="102호" />
+                    </div>
+                    <div class="room_info">
+                      <div class="title"><span>102</span>room B</div>
+                      <div class="more">more view</div>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper_slide item3">
+                  <a href="room3">
+                    <div class="room_C">
+                      <img src="./img/room12.jpg" alt="103호" />
+                    </div>
+                    <div class="room_info">
+                      <div class="title"><span>103</span>room C</div>
+                      <div class="more">more view</div>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper_slide item4">
+                  <a href="room4">
+                    <div class="room_D">
+                      <img src="./img/room14.jpg" alt="201호" />
+                    </div>
+                    <div class="room_info">
+                      <div class="title"><span>201</span>room D</div>
+                      <div class="more">more view</div>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper_slide item5">
+                  <a href="room5">
+                    <div class="room_E">
+                      <img src="./img/room13.jpg" alt="202호" />
+                    </div>
+                    <div class="room_info">
+                      <div class="title"><span>202</span>room E</div>
+                      <div class="more">more view</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr />
+    <section id="Travel">
+      <h2>TRAVEL</h2>
+      <p>TOUR GUIDE</p>
+      <div class="content_wrap">
+        <div>
+          <img src="./img/TRAVEL 01.jpg" alt="" />
+          <p>TOUR 01</p>
+          <h3>호미곶 해맞이광장</h3>
+          <p>5 Minute</p>
+          <p>
+            호미곶은 한반도의 최동단에 위치, 한반도 지형상 호랑이 꼬리에
+            해당하는 곳입니다. 육당 최남선은 백두산 호랑이가 앞발로 연해주를
+            할퀴는 형상으로 한반도를 묘사하면서 일출제일의 이곳을 조선십경의
+            하나로 꼽았다고합니다.
+          </p>
+          <a href="#">MORE</a>
+        </div>
+        <div>
+          <img src="./img/TRAVEL 02.jpg" alt="" />
+          <p>TOUR 02</p>
+          <h3>구룡포 일본인 가옥거리</h3>
+          <p>5 Minute</p>
+          <p>
+            호미곶은 한반도의 최동단에 위치, 한반도 지형상 호랑이 꼬리에
+            해당하는 곳입니다. 육당 최남선은 백두산 호랑이가 앞발로 연해주를
+            할퀴는 형상으로 한반도를 묘사하면서 일출제일의 이곳을 조선십경의
+            하나로 꼽았다고합니다.
+          </p>
+          <a href="#">MORE</a>
+        </div>
+        <div>
+          <img src="./img/TRAVEL 03.jpg" alt="" />
+          <p>TOUR 03</p>
+          <h3>구룡포항 &amp; 구룡포 시장</h3>
+          <p>15 Minute</p>
+          <p>
+            구룡포 시장도 가까워 지역 시장의 정겨운 분위기와 맛있는 음식을 즐길
+            수 있습니다. 이곳은 특산물인 과메기를 판매하는 곳이 많고, 전국
+            최대의 대게 산지로 알려진 곳이어서 질 좋은 과메기와 싱싱한 대게를
+            맛볼 수 있습니다.
+          </p>
+          <a href="#">MORE</a>
+        </div>
+        <hr />
+        <div>
+          <img src="./img/TRAVEL 04.jpg" alt="" />
+          <p>TOUR 04</p>
+          <h3>구룡포해수욕장</h3>
+          <p>15 Minute</p>
+          <p>
+            구룡포의 지리적 특성은, 구릉지가 많고 평지가 적으며, 겨울은 따뜻하고
+            여름은 서늘한 기후로 15.8km의 긴 해안선에 둘러싸여 있고, 구룡포항은
+            수산업 중심지이자 어업전진기지로서 근해어업이 발달했고, 주로 오징어,
+            꽁치, 대게 등의 어획고가 많습니다.
+          </p>
+          <a href="#">MORE</a>
+        </div>
+        <div>
+          <img src="./img/TRAVEL 05.jpg" alt="" />
+          <p>TOUR 05</p>
+          <h3>포항 크루즈</h3>
+          <p>5 Minute</p>
+          <p>
+            수십년 동안 막혀 있던 동빈내항의 뱃길을 포항시의 생태복원 사업으로
+            수로를 복구하여 옛 물길을 되찾아, 형산강 입구에서 송도교를 잇는
+            1.3km 구간에 실개천 같은 운하가 생겼습니다.
+          </p>
+          <a href="#">MORE</a>
+        </div>
+        <div>
+          <img src="./img/TRAVEL 06.jpg" alt="" />
+          <p>TOUR 06</p>
+          <h3>환호공원 스페이스워크</h3>
+          <p>40 Minute</p>
+          <p>
+            포항 환호공원 내에 위치한 스페이스워크는 트랙길이 333m, 계단 개수
+            717개 규모로 만들어졌고, 철로 그려진 우아한 곡선과 밤하늘을 수놓는
+            조명은 철과 빛의 도시 포항을 상징하며, 360도로 펼쳐져 있는 전경을
+            내려다보면 포항의 아름다운 풍경과 제철소의 찬란한 야경 그리고
+            영일만의 일출, 일몰을 감상할 수 있습니다.
+          </p>
+          <a href="#">MORE</a>
+        </div>
+      </div>
+    </section>
+    <section id="Special">
+      <header class="special_header">
+        <h2>Special List</h2>
+        <p>코랄트리에서만 경험할 수 있는 특별한 서비스</p>
+      </header>
+      <article class="list1">
+        <a href="#"><img src="./img/room2.jpg" alt="" /></a>
+        <h3>OCEAN VIEW</h3>
+        <p>
+          코랄트리의 특별한 오션뷰 창을 열면 언제든, 그 어떤 계절에도 변함없는
+          바다가당신의 하루를 특별하게 만들어줍니다.
+        </p>
+      </article>
+      <article class="list2">
+        <a href="#"><img src="./img/room7.jpg" alt="" /></a>
+        <h3>MAIN POOL</h3>
+        <p>
+          끝없는 인피니티, 메인 수영장 넓은 수면 위로 펼쳐지는 코랄트리 메인
+          풀은 한계없는 휴식을 만듭니다.
+        </p>
+      </article>
+      <article class="list3">
+        <a href="#"><img src="./img/slide10.jpg" alt="" /></a>
+        <h3>PRIVATE POOL</h3>
+        <p>
+          탁 트인 수평선의 연장선 에메랄드빛 수면 위로 햇살이 춤추고 바다와
+          이어진 풍경에, 눈부신 순간을 선물합니다.
+        </p>
+      </article>
+      <article class="list4">
+        <a href="#"><img src="./img/bbq2.jpg" alt="" /></a>
+        <h3>BBQ</h3>
+        <p>
+          바베큐와 함께 무르익는 이야기 꽃 지글거리는 그릴 소리와 함께, 노을빛은
+          황금으로 물들어갑니다.
+        </p>
+      </article>
+      <article class="list5">
+        <a href="#"><img src="./img/cafe2.jpg" alt="" /></a>
+        <h3>CAFE</h3>
+        <p>
+          느린 숨, 여유로운 한모금 유리창을 액자 삼아 담은 코랄트리의 풍경이,
+          커피보다 진한 고요함을 선사합니다.
+        </p>
+      </article>
+    </section>
+    <hr />
+    <section id="main_footer">
+      <div class="navigation">
+        <ul>
+          <li><a href="#">Coraltree</a></li>
+          <li><a href="#">Rooms</a></li>
+          <li><a href="#">Special</a></li>
+          <li><a href="#">Travel</a></li>
+          <li><a href="#">Location</a></li>
+          <li><a href="#">Reservation</a></li>
+        </ul>
+      </div>
+      <div class="telephone">
+        <p><a href="sms:01026316333">010-2631-6333</a></p>
+        <!-- <a href="sms:01012345678" -->
+      </div>
+      <div class="footer_bottom">
+        <ul class="sns">
+          <li>
+            <a href="https://instagram.com">
+              <img src="./img/insta.svg" alt="" />
+            </a>
+          </li>
+        </ul>
+        <p class="copyright">&copy;CORALTREE 2025 | ALL RIGHTS RESERVED</p>
+      </div>
+    </section>
+
+    <!-- script -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="./js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const popupLink = document.querySelector(".popup a");
+
+        if (!popupLink) {
+          console.log("팝업 링크가 없습니다.");
+          return;
+        }
+
+        popupLink.addEventListener("click", (e) => {
+          e.preventDefault(); // a 태그의 페이지 이동 막기
+
+          Swal.fire({
+            title: "예약 안내",
+            text: "지금 바로 예약하시겠습니까?",
+            icon: "info",
+            showCancelButton: true,
+            confirmButtonText: "예",
+            cancelButtonText: "아니오",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+body,header,footer,nav,section,article,aside,div,p,h1,h2,h3,h4,h5,h6,ul,li,ol,dl,dt,dd,table,tbody,
+thead,tfoot,th,td,address,form,fieldset,input,select,button,textarea,option,address,blockquote{
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+ol,ul{list-style: none;}
+a{text-decoration: none;}
+h1,h2,h3,h4,h5,h6{font-size: 100%; font-weight: normal;}
+strong,b{font-weight: normal;}
+em,i,address{font-style: normal;}
+table{border-collapse: collapse; border-spacing: 0;}
+img{display: block; }
+caption,legend,hr{display: none; }
+img,fieldset{border: 0;}
+textarea{resize: none;}
+q::before,q::after{content: "";}

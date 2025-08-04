@@ -1,0 +1,684 @@
+@charset "utf-8";
+@import "reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Serif:wght@100..900&family=Roboto:wght@100..900&display=swap");
+
+html,
+body {
+  font-family: "Roboto", "Noto Serif", sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+.sr_only {
+  visibility: hidden;
+  font-size: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-indent: -9999px;
+}
+
+/* ---------------- HEADER ---------------- */
+#main_header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+#main_header.fix {
+  background-color: #a8cecf;
+  height: auto;
+}
+#main_header img {
+  margin-top: 20px;
+  height: 60px;
+}
+.toggle_btn {
+  width: 32px;
+  height: 32px;
+  margin-left: auto;
+
+  border: none;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 6px 0;
+}
+.toggle_btn span {
+  width: 28px;
+  height: 3px;
+  background: #fff !important;
+  border-radius: 2px;
+}
+#main_header.fix .toggle_btn span {
+  background: #000;
+}
+.popup ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.popup li {
+  display: inline-block;
+}
+
+.popup a {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+.popup a:hover {
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+}
+
+/* GNB (모바일 메뉴) */
+.gnb {
+  position: absolute;
+  top: 0;
+  left: -70vw;
+  width: 70vw;
+  height: 100vh;
+  background: #fff;
+  padding: 80px 24px;
+  transition: left 0.3s;
+  z-index: 1001;
+}
+.gnb ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.gnb .sub {
+  display: none;
+  font-size: 0.9rem;
+  padding-left: 12px;
+  margin-top: 10px;
+}
+.gnb a {
+  color: #151515;
+}
+.closeBtn {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* Desktop Menu */
+@media screen and (min-width: 1200px) {
+  .toggle_btn,
+  .closeBtn {
+    display: none !important;
+  }
+  .gnb {
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+    padding: 0;
+  }
+  .gnb ul {
+    flex-direction: row;
+    gap: 30px;
+  }
+  .gnb li {
+    position: relative;
+  }
+  .gnb li > a {
+    color: #fff;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  }
+  .gnb li:hover .sub {
+    display: block;
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    padding: 15px;
+    z-index: 1002;
+  }
+}
+
+/* ---------------- SWIPER: MAIN SLIDE ---------------- */
+.swiper {
+  position: relative;
+}
+
+#slide_container .swiper {
+  width: 100%;
+  height: 100vh;
+}
+#slide_container .swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+#slide_container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  position: relative;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff;
+}
+.swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.432);
+  opacity: 1;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+}
+
+.swiper-pagination-bullet-active {
+  background: #fff;
+}
+
+/* ---------------- ROOM VIEW ---------------- */
+.main_room {
+  position: relative;
+  height: 500vh;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.main_room .m_wrap {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.main_room .m_inner {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+}
+
+@media screen and (min-width: 1281px) {
+  #main_room .m_inner {
+    flex-direction: row;
+    height: 100vh;
+  }
+}
+
+/* Left Column: 텍스트 + 배경 */
+#main_room .room_text {
+  position: relative;
+  width: 100%;
+  text-align: left;
+  padding: 10rem 8.5% 4rem;
+  color: #fff;
+}
+
+@media screen and (min-width: 1281px) {
+  #main_room .room_text {
+    width: 50%;
+    height: 100vh;
+    padding-top: 15rem;
+  }
+}
+
+#main_room .room_text .title {
+  position: absolute;
+  top: 5rem; /* 이미지 위쪽에서 띄우는 위치 조절 */
+  left: 8%; /* 이미지 패딩과 맞춰서 위치 조절 */
+  font-size: clamp(2.5rem, 2.2vw, 4.2rem);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 1.2);
+  font-weight: 300;
+  line-height: 1;
+  color: #fff;
+  z-index: 10;
+}
+#main_room .room_text .room_t1 {
+  position: relative;
+}
+#main_room .room_text .desc {
+  position: absolute;
+  left: 0;
+  bottom: 50%;
+  width: 100%;
+  color: #fff;
+  padding: 0 8.5%;
+  font-size: clamp(0.9rem, 0.9vw, 1.1rem);
+  font-weight: 400;
+  line-height: 1.6;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+#main_room .room_text img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media screen and (min-width: 1281px) {
+  #main_room .m_inner {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    height: auto; /* 중요: 내부 높이 고정하지 말기 */
+  }
+
+  #main_room .room_text {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    padding-top: 15rem;
+    flex: 1;
+  }
+
+  #main_room .m_room {
+    flex: 1;
+    height: auto; /* 내부 스크롤 방지 */
+    overflow: visible; /* 내부 스크롤 완전 차단 */
+    padding: 2rem 2rem 10rem;
+  }
+}
+
+/* Swiper 슬라이드 */
+.swiper_slide {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.swiper_slide.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.swiper.room {
+  width: 100%;
+  max-width: 57rem;
+  overflow: hidden;
+}
+
+.swiper_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  padding: 0;
+}
+
+.swiper_slide {
+  width: 100%;
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.65s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.swiper_slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.room_info {
+  text-align: center;
+  margin-top: -40px;
+  font-family: var(--font-blacker);
+  font-weight: 400;
+  color: #383838;
+}
+
+.room_info .title {
+  font-size: clamp(2.5rem, 2.6042vw, 5rem);
+  letter-spacing: 0.4rem;
+  white-space: nowrap;
+  color: #383838;
+}
+
+.room_info .title span {
+  font-size: 80px;
+  font-family: "aboreto", sans-serif;
+  margin-right: 15px;
+  font-weight: 400;
+  color: #383838;
+}
+
+.room_info .more {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: clamp(1.6rem, 1.0417vw, 2rem);
+  padding-right: 30%;
+  position: relative;
+  color: #383838;
+}
+
+.room_info .more::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 28%;
+  height: 1px;
+  background: #fff;
+}
+
+/* 반응형 */
+@media screen and (max-width: 1000px) {
+  #main_room .m_inner {
+    flex-direction: column;
+  }
+
+  #main_room .room_text {
+    text-align: center;
+    padding: 5rem 1.5rem;
+  }
+
+  .room_info .title span {
+    font-size: 40px;
+    margin-right: 10px;
+  }
+
+  .swiper_wrapper {
+    padding: 4rem 0;
+  }
+}
+
+/* ---------------- TRAVEL ---------------- */
+#Travel {
+  position: relative;
+  padding-top: 100px;
+  z-index: 1;
+  padding: 3.2rem 15px;
+  background: #fff;
+}
+
+#Travel > h2 {
+  font-size: 2.6rem;
+  font-weight: 500;
+  font-family: "Noto Serif", serif;
+  color: #090909;
+  text-align: center;
+  margin-bottom: 2.8rem;
+}
+
+#Travel > h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 1px;
+  background: #090909;
+  margin: 20px auto 0;
+}
+
+#Travel > p {
+  text-align: center;
+  margin-bottom: 2.4rem;
+  color: #444444;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1.6rem;
+}
+
+#Travel .content_wrap {
+  padding: 2.4rem 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+/* 태블릿 (768px 이상) - 2개씩 3줄 */
+@media screen and (min-width: 768px) {
+  #Travel .content_wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 데스크탑 (1280px 이상) - 3개씩 2줄 */
+@media screen and (min-width: 1280px) {
+  #Travel .content_wrap {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+#Travel .content_wrap > div {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 40px;
+  text-align: center;
+  cursor: default;
+  transition: border-color 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+#Travel .content_wrap > div:hover {
+  border-color: #424242;
+  transform: translateY(-2px);
+}
+
+#Travel .content_wrap img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+}
+
+#Travel .content_wrap > div > h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-family: "맑은 고딕", "Noto Serif", serif;
+  margin: 1rem 0;
+}
+
+#Travel .content_wrap > div > p {
+  color: #4b4b4b;
+  font-weight: 400;
+  line-height: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+#Travel .content_wrap > div > a {
+  border-bottom: 1px solid #151515;
+  color: #151515;
+  font-size: 0.76rem;
+  font-weight: 700;
+  display: inline-block;
+  padding-bottom: 8px;
+  letter-spacing: 0.2rem;
+}
+
+/* ---------------- SPECIAL ---------------- */
+#Special {
+  padding: 3.2rem 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  background: #fff;
+}
+
+#Special .special_header {
+  padding: 20px 0;
+  text-align: center;
+}
+
+#Special .special_header h2 {
+  font-family: "Noto Serif", serif;
+  font-size: 2.6rem;
+  margin-bottom: 1.73rem;
+  letter-spacing: -1px;
+  color: #151515;
+}
+
+#Special .special_header h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 1px;
+  background-color: #151515;
+  margin: 20px auto 0;
+}
+
+#Special .special_header p {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #5d5d5d;
+  line-height: 1.7rem;
+  margin-bottom: 1.7rem;
+}
+#Special article {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+#Special article:hover {
+  transform: translateY(-8px);
+  background-color: #f9f9f9;
+}
+#Special article img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#Special article h3 {
+  font-size: 1.25rem;
+  margin: 1.2rem 1rem 0.5rem;
+  font-family: "Noto Serif", serif;
+  color: #151515;
+  text-align: center;
+}
+
+#Special article p {
+  font-size: 0.95rem;
+  font-weight: 400;
+  text-align: center;
+  color: #424242;
+  line-height: 1.6;
+  margin: 0 1rem 1.2rem;
+}
+
+#Special article a {
+  display: block;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+/*그리드 설정 */
+#Special {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  #Special {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  #Special {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---------------- FOOTER ---------------- */
+#main_footer {
+  background: #f4f4f4;
+  padding: 60px 20px;
+  font-size: 0.9rem;
+  color: #5d5d5d;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+/* 네비게이션 */
+#main_footer .navigation {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+#main_footer .navigation ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+#main_footer .navigation ul li a {
+  color: #5d5d5d;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+#main_footer .navigation ul li a:hover {
+  color: #000;
+}
+
+/* 전화번호 */
+#main_footer .telephone {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#main_footer .telephone a {
+  color: #303030;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* 하단 영역 */
+#main_footer .footer_bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+}
+
+#main_footer .sns {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#main_footer .sns li {
+  list-style: none;
+}
+
+#main_footer .sns li a img {
+  width: 40px;
+  height: 40px;
+  display: block;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+#main_footer .sns li a img:hover {
+  transform: scale(1.1);
+}
+
+#main_footer .copyright {
+  font-size: 0.85rem;
+  color: #999;
+  font-weight: 300;
+}
